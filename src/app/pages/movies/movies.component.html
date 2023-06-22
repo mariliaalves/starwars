@@ -1,1 +1,14 @@
-<p>movies works!</p>
+<table>
+    <th>
+        <h1>Movies</h1>
+    </th>
+    <div>
+        <ul class="title" *ngFor="let item of movie ; let id = 'index+1 ';" routerLink="/filmsDetail/{{ id }}">
+        <li>
+            {{item.title}}
+
+        </li>
+
+        </ul>
+    </div>
+</table>

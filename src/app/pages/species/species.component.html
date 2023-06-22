@@ -1,1 +1,14 @@
-<p>species works!</p>
+<table>
+    <th>
+        <h1>Species</h1>
+    </th>
+    <div>
+        <ul class="title" *ngFor="let item of specie ; let id = 'index+1 ';" routerLink="/specieDetail/{{ id }}">
+        <li>
+            {{item.name}}
+
+        </li>
+
+        </ul>
+    </div>
+</table>

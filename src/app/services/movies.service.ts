@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {environment} from 'src/environments/environment';
-import {Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Movies } from '../model/movies.model';
+import GenericApiResult from '../model/genericApiResults';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
+  apiMovies = 'https://swapi.dev/api/films/'
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<Movies> {
-    const url = `${environment.baseUrl}films`;
-    return this.http.get<Movies>(url);
+  public getMovies() : Observable<GenericApiResult<Movies[]>> {
+    return this.http.get<GenericApiResult<Movies[]>>(this.apiMovies)
   }
 }

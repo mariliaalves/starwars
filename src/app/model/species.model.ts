@@ -1,4 +1,4 @@
-export interface Model {
+export interface Species {
     name: string;
     classification: string;
     designation: string;

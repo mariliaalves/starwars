@@ -21,8 +21,6 @@ export class HomeComponent implements OnInit {
       this.character = data.results
      } )
       
-     
-
   }
 
  }
