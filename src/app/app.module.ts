@@ -16,7 +16,6 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { CharactersComponent } from './pages/characters/characters.component';
 import { PlanetsComponent } from './pages/planets/planets.component';
 import { SpeciesComponent } from './pages/species/species.component';
-import { NavComponent } from './nav/nav.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -33,7 +32,6 @@ import { HttpClientModule } from '@angular/common/http';
     CharactersComponent,
     PlanetsComponent,
     SpeciesComponent,
-    NavComponent,
   ],
   imports: [
     BrowserModule,

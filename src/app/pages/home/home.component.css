@@ -1,8 +1,32 @@
-.home {
-    background-color:red;
+:host {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    background-image: url('/assets/img/chewbie.jpg') ;
+    background-size: cover;
+  }
+  
+
+h1 {
+    color: yellow;
+    -webkit-text-stroke: 0.5px black;
+    text-align: center;  
+    font-family: 'Star Jedi', sans-serif;
 }
 
-body {
-    background-image: url('../../../assets/img/stars.jpg');
+.white-block {
+    background-color: #000;
+    width: 30%;
+    height: 90%;
+    float:left;
+    z-index: 1;
+    opacity: 0.9;
+    border-radius: 10px;
+    background-image: url('/assets/img/galaxy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
+
+  
