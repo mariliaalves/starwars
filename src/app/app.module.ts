@@ -18,6 +18,10 @@ import { PlanetsComponent } from './pages/planets/planets.component';
 import { SpeciesComponent } from './pages/species/species.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CharactersDetailComponent } from './pages/characters-detail/characters-detail.component';
+import { MoviesDetailComponent } from './pages/movies-detail/movies-detail.component';
+import { PlanetsDetailComponent } from './pages/planets-detail/planets-detail.component';
+import { SpeciesDetailComponent } from './pages/species-detail/species-detail.component';
 
 
 
@@ -32,6 +36,10 @@ import { HttpClientModule } from '@angular/common/http';
     CharactersComponent,
     PlanetsComponent,
     SpeciesComponent,
+    CharactersDetailComponent,
+    MoviesDetailComponent,
+    PlanetsDetailComponent,
+    SpeciesDetailComponent,
   ],
   imports: [
     BrowserModule,
