@@ -24,4 +24,8 @@ export class SpeciesComponent implements OnInit {
       
   }
 
+  getSpecieId(url: string): string {
+    return url.split('/').filter(el => Number.parseInt(el))[0]
+  }
+
  }

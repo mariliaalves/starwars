@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Characters } from 'src/app/model/characters.model';
 import { CharactersService } from 'src/app/services/characters.service';
-import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-characters-detail',

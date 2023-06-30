@@ -4,7 +4,7 @@
         <h1>Species</h1>
     </th>
     <div>
-        <ul class="title" *ngFor="let item of specie ; let id = 'index+1 ';" routerLink="/specieDetail/{{ id }}">
+        <ul class="title" *ngFor="let item of specie ; let id = 'index+1 ';" routerLink="/species/{{ getSpecieId(item.url) }}">
         <li>
             {{item.name}}
 

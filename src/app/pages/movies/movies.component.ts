@@ -22,5 +22,8 @@ export class MoviesComponent implements OnInit {
      } )
       
   }
+  getMovieId(url: string): string {
+    return url.split('/').filter(el => Number.parseInt(el))[0]
+  }
 
  }

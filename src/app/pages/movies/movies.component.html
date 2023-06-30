@@ -4,7 +4,7 @@
         <h1>Movies</h1>
     </th>
     <div>
-        <ul class="title" *ngFor="let item of movie ; let id = 'index+1 ';" routerLink="/filmsDetail/{{ id }}">
+        <ul class="title" *ngFor="let item of movie ; let id = 'index+1 ';" routerLink="/movies/{{ getMovieId(item.url) }}">
         <li>
             {{item.title}}
 
