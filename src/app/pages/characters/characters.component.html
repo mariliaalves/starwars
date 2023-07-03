@@ -7,13 +7,13 @@
         
     </th>
     <div>
-        <ul class="title" *ngFor="let item of character ; let id = 'index+1 ';" routerLink="/characters/{{ getCharacterId(item.url) }}">
+        <a class="title" *ngFor="let item of character ; let id = 'index+1 ';" routerLink="/characters/{{ getCharacterId(item.url) }}">
         <li>
             {{item.name}}
 
         </li>
 
-        </ul>
+        </a>
     </div>
 </table>
 </div>

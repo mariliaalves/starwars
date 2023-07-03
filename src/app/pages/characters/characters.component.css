@@ -16,8 +16,15 @@ h1 {
 }
 
 .title {
-  color:aliceblue
+  color:aliceblue;
+  text-decoration: solid;
+  cursor: pointer;
 }
+
+.title:hover {
+  color:rgb(47, 0, 255)
+}
+
 .white-block {
   background-color: #000;
   width: 30%;

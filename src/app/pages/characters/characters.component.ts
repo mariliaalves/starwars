@@ -26,5 +26,6 @@ export class CharactersComponent implements OnInit {
   getCharacterId(url: string): string {
     return url.split('/').filter(el => Number.parseInt(el))[0]
   }
+  
 
  }

@@ -15,4 +15,9 @@ export class CharactersService {
   public getCharacters() : Observable<GenericApiResult<Characters[]>> {
     return this.http.get<GenericApiResult<Characters[]>>(this.apiCharacters)
   }
+
+  public getCharacter(id: string) : Observable<Characters>{
+    return this.http.get<Characters>(this.apiCharacters + id)
+
+  }
 }
