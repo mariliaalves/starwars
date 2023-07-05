@@ -9,16 +9,24 @@ import { PlanetsService } from 'src/app/services/planets.service';
   styleUrls: ['./planets-detail.component.css']
 })
 export class PlanetsDetailComponent implements OnInit {
-  detail!: Planets[]
+  detail!: Planets
 
   constructor (
     private route: ActivatedRoute,
-    private planetsservice : PlanetsService
+    private planetsService : PlanetsService
     ) {}
 
- ngOnInit(): void {
-   const id = Number(this.route.snapshot.paramMap.get('id'));
-   console.log(id)
-
+    ngOnInit(): void {
+      this.getPlanet();
     }
-  }
+  
+   getPlanet(): void {
+     const id = this.route.snapshot.paramMap.get('id') ?? ''
+     this.planetsService.getPlanet(id).subscribe((response: Planets) => {
+      this.detail = response;
+     })
+    
+      }
+    }
+
+   

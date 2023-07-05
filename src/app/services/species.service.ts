@@ -15,4 +15,9 @@ export class SpeciesService {
   public getSpecies() : Observable<GenericApiResult<Species[]>> {
     return this.http.get<GenericApiResult<Species[]>>(this.apiSpecies)
   }
+
+  public getSpecie(id: string) : Observable<Species>{
+    return this.http.get<Species>(this.apiSpecies + id)
+
+  }
 }

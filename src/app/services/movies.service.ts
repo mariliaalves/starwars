@@ -15,4 +15,8 @@ export class MoviesService {
   public getMovies() : Observable<GenericApiResult<Movies[]>> {
     return this.http.get<GenericApiResult<Movies[]>>(this.apiMovies)
   }
+  public getMovie(id: string) : Observable<Movies>{
+    return this.http.get<Movies>(this.apiMovies + id)
+
+  }
 }

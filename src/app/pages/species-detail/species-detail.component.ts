@@ -10,7 +10,7 @@ import { SpeciesService } from 'src/app/services/species.service';
   styleUrls: ['./species-detail.component.css']
 })
 export class SpeciesDetailComponent implements OnInit {
-  detail!: Species[]
+  detail!: Species
 
   constructor (
     private route: ActivatedRoute,
@@ -18,9 +18,17 @@ export class SpeciesDetailComponent implements OnInit {
     ) {}
 
  ngOnInit(): void {
-   const id = Number(this.route.snapshot.paramMap.get('id'));
-   console.log(id)
+  this.getSpecie();
 
     }
+
+ getSpecie(): void {
+      const id = this.route.snapshot.paramMap.get('id') ?? ''
+      this.speciesService.getSpecie(id).subscribe((response: Species) => {
+       this.detail = response;
+      })
+     
+       }
+     }
+         
     
-  }

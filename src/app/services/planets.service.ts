@@ -15,4 +15,8 @@ export class PlanetsService {
   public getPlanets() : Observable<GenericApiResult<Planets[]>> {
     return this.http.get<GenericApiResult<Planets[]>>(this.apiPlanets)
   }
+  public getPlanet(id: string) : Observable<Planets>{
+    return this.http.get<Planets>(this.apiPlanets + id)
+
+  }
 }
