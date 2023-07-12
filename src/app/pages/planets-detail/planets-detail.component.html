@@ -1,1 +1,20 @@
-<p>planets-detail works!</p>
+<div class="white-block">
+  <div class="title" *ngIf="detail" >
+   <h2>{{detail.name}}</h2>
+   <p>Diameter : {{detail.diameter}}</p>
+   <p>Rotation Period : {{detail.rotation_period}}</p>
+   <p>Orbital Period : {{detail.orbital_period}}</p>
+   <p>Gravity : {{detail.gravity}}</p>
+   <p>Population : {{detail.population}}</p>
+   <p>Climate : {{detail.climate}}</p>
+   <p>Terrain : {{detail.terrain}}</p>
+   <p>Surface Water: {{detail.surface_water}}</p>
+   <p>Residents :<a href="{{detail.residents}}">{{detail.residents}}</a></p>
+   <p>Films :<a href="{{detail.films}}">{{detail.films}}</a></p>
+
+
+  </div>
+</div>
+      
+
+ 

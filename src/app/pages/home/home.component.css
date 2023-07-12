@@ -11,23 +11,14 @@
 h1 {
     color: yellow;
     -webkit-text-stroke: 0.5px black;
-    text-align: center;  
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Star Jedi', sans-serif;
     font-size: 50px;
-}
-
-.white-block {
-    background-color: #000;
-    width: 30%;
-    height: 90%;
-    float:left;
-    z-index: 1;
-    opacity: 0.9;
-    border-radius: 10px;
-    background-image: url('/assets/img/galaxy.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
 
 }
+
 
   

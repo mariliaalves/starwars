@@ -1,1 +1,21 @@
-<p>species-detail works!</p>
+<div class="white-block">
+    <div class="title" *ngIf="detail">
+      <div class="title" *ngIf="detail" >
+        <h2>{{detail.name}}</h2>
+        <p>Classification : {{detail.classification}}</p>
+        <p>Designation : {{detail.designation}}</p>
+        <p>Average Height : {{detail.average_height}}</p>
+        <p>Average Lifespan : {{detail.average_lifespan}}</p>
+        <p>Eye Colors : {{detail.eye_colors}}</p>
+        <p>Hair Colors : {{detail.hair_colors}}</p>
+        <p>Skin Colors : {{detail.skin_colors}}</p>
+        <p>Language : {{detail.language}}</p>
+        <p>Homeworld :<a href="{{detail.homeworld}}">{{detail.homeworld}}</a></p>
+        <p>People :<a href="{{detail.people}}">{{detail.people}}</a></p>
+        <p>Films :<a href="{{detail.films}}">{{detail.films}}</a></p>
+
+        
+     
+     
+       </div>
+     </div>

@@ -1,1 +1,13 @@
-<p>movies-detail works!</p>
+<div class="white-block">
+    <div class="title" *ngIf="detail" >
+      <h2>{{detail.title}}</h2>
+      <p>Director: {{detail.director}}</p>
+      <p>Producer: {{detail.producer}}</p>
+      <p>Release Date: {{detail.release_date}}</p>
+      <p>Species: <a href="{{detail.species}}">{{detail.species}}</a></p>
+      <p>Characters: <a href="{{detail.characters}}">{{detail.characters}}</a></p>
+      <p>Planets: <a href="{{detail.planets}}">{{detail.planets}}</a></p>
+        
+    
+    </div>
+    </div>
