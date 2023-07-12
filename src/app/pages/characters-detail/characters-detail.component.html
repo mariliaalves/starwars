@@ -9,8 +9,16 @@
         <p>Mass : {{ detail.mass }}</p>
         <p>Skin Color: {{detail.skin_color}}</p>
         <p>Homeworld :<a href="{{detail.homeworld}}">{{detail.homeworld}}</a></p>
-        <p>Films :<a href="{{detail.films}}">{{detail.films}}</a></p>
-        <p>Species:<a href="{{detail.species}}">{{detail.species}}</a></p>
+        <p>Films:
+            <span *ngFor="let film of detail.films; let last = last">
+              <a href="{{ film }}">{{ film }}</a>{{ last ? '' : ', ' }}
+            </span>
+          </p>
+        <p>Species:
+            <span *ngFor="let specie of detail.species; let last = last">
+              <a href="{{ specie }}">{{ specie }}</a>{{ last ? '' : ', ' }}
+            </span>
+          </p>
         
     
     </div>

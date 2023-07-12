@@ -12,7 +12,11 @@
         <p>Language : {{detail.language}}</p>
         <p>Homeworld :<a href="{{detail.homeworld}}">{{detail.homeworld}}</a></p>
         <p>People :<a href="{{detail.people}}">{{detail.people}}</a></p>
-        <p>Films :<a href="{{detail.films}}">{{detail.films}}</a></p>
+        <p>Films:
+          <span *ngFor="let film of detail.films; let last = last">
+            <a href="{{ film }}">{{ film }}</a>{{ last ? '' : ', ' }}
+          </span>
+        </p>
 
         
      
