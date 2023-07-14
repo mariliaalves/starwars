@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Characters } from 'src/app/model/characters.model';
 import { CharactersService } from 'src/app/services/characters.service';
+import StringUtils from 'src/app/utils/string';
 
 @Component({
   selector: 'app-characters',
@@ -24,7 +25,7 @@ export class CharactersComponent implements OnInit {
   }
 
   getCharacterId(url: string): string {
-    return url.split('/').filter(el => Number.parseInt(el))[0]
+    return StringUtils.extractIdFromUrl(url)
   }
   
 

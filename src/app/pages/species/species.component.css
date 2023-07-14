@@ -19,6 +19,10 @@ h1 {
   color:aliceblue
 }
 
+.title:hover {
+  color:rgb(47, 0, 255)
+}
+
 .white-block {
   background-color: #000;
   width: 30%;

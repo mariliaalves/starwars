@@ -1,8 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import GenericApiResult from '../model/genericApiResults';
 import { Characters } from '../model/characters.model';
+import { MoviesService } from './movies.service';
+import { PlanetsService } from './planets.service';
+import { SpeciesService } from './species.service';
+import {map,switchMap} from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +14,13 @@ import { Characters } from '../model/characters.model';
 export class CharactersService {
   apiCharacters = 'https://swapi.dev/api/people/'
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private moviesService: MoviesService,
+    private planetsService: PlanetsService,
+    private speciesService: SpeciesService
+    
+    ) { }
 
   public getCharacters() : Observable<GenericApiResult<Characters[]>> {
     return this.http.get<GenericApiResult<Characters[]>>(this.apiCharacters)
@@ -20,4 +30,5 @@ export class CharactersService {
     return this.http.get<Characters>(this.apiCharacters + id)
 
   }
+
 }
