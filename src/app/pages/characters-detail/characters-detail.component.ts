@@ -7,6 +7,8 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { SpeciesService } from 'src/app/services/species.service';
 import StringUtils from 'src/app/utils/string';
 import { Planets } from 'src/app/model/planets.model';
+import { Movies } from 'src/app/model/movies.model';
+import { map, mergeMap } from 'rxjs';
 
 @Component({
   selector: 'app-characters-detail',
@@ -15,13 +17,14 @@ import { Planets } from 'src/app/model/planets.model';
 })
 export class CharactersDetailComponent implements OnInit {
   detail!: Characters
-  homeworld!: Planets ;
+  homeworld!: Planets
+  films: Movies[] = []
 
   constructor (
     private route: ActivatedRoute,
     private charactersService : CharactersService,
     private homeworldService : PlanetsService,
-    private moviesService : MoviesService,
+    private filmsService : MoviesService,
     private speciesService : SpeciesService
     ) {}
 
@@ -36,18 +39,26 @@ export class CharactersDetailComponent implements OnInit {
     this.charactersService.getCharacter(id).subscribe((response: Characters) => {
       this.detail = response;
       console.log(this.detail)
-      console.log(StringUtils.extractIdFromUrl(this.detail.homeworld))
       const homeworldId = StringUtils.extractIdFromUrl(this.detail.homeworld)
       this.homeworldService.getPlanet(homeworldId).subscribe((response: Planets) => {
-        console.log(response)
         this.homeworld = response
-      })
-
- 
+      });
+      this.detail.films.forEach((film: string ) => {
+        const filmId = StringUtils.extractIdFromUrl(film)
+        console.log(filmId)
+        this.filmsService.getMovie(filmId).subscribe((response: Movies) => {
+          console.log(response)
+          this.films.push(response)
+        })
+      }) 
     });
+  }
 
+  extractIdFromUrl(url : string) : string {
+    return StringUtils.extractIdFromUrl(url)
   }
 }
+
   
   
 
