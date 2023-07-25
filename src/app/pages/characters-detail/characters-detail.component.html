@@ -9,9 +9,10 @@
         <p>Mass : {{ detail.mass }}</p>
         <p>Skin Color: {{detail.skin_color}}</p>
 
-        <p *ngIf="homeworld">Homeworld: {{homeworld.name}}</p>
-        <p *ngFor=" let film">Films: {{film.name}}</p>
-        
+
+        <p *ngIf="homeworld">
+          Homeworld: <a [routerLink]="['/planets', extractIdFromUrl(homeworld.url)]">{{ homeworld.name }}</a>
+      </p>
         
        <p>Films:
             <span *ngFor="let film of films; let last = last">
@@ -20,8 +21,8 @@
           </p>
 
         <p>Species:
-            <span *ngFor="let specie of detail.species; let last = last">
-              <a href="{{ specie }}">{{ specie }}</a>{{ last ? '' : ', ' }}
+            <span *ngFor="let specie of species; let last = last">
+              <a routerLink="/species/{{ extractIdFromUrl(specie.url) }}">{{ specie.name }}</a>{{ last ? '' : ', ' }}
             </span>
           </p>
         

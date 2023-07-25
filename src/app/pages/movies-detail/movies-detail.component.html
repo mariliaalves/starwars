@@ -4,10 +4,13 @@
       <p>Director: {{detail.director}}</p>
       <p>Producer: {{detail.producer}}</p>
       <p>Release Date: {{detail.release_date}}</p>
-      <p>Species: <a href="{{detail.species}}">{{detail.species}}</a></p>
-      <p>Characters: <a href="{{detail.characters}}">{{detail.characters}}</a></p>
-      <p>Planets: <a href="{{detail.planets}}">{{detail.planets}}</a></p>
-        
+
+      <p>Species:
+        <span *ngFor="let specie of species; let last = last">
+            <a [routerLink]="['/species', extractIdFromUrl(specie.url)]">{{ specie.name }}</a>{{ last ? '' : ', ' }}
+        </span>
+    </p>
+  
     
     </div>
     </div>

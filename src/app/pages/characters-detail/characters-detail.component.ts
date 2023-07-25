@@ -8,7 +8,7 @@ import { SpeciesService } from 'src/app/services/species.service';
 import StringUtils from 'src/app/utils/string';
 import { Planets } from 'src/app/model/planets.model';
 import { Movies } from 'src/app/model/movies.model';
-import { map, mergeMap } from 'rxjs';
+import { Species } from 'src/app/model/species.model';
 
 @Component({
   selector: 'app-characters-detail',
@@ -19,6 +19,7 @@ export class CharactersDetailComponent implements OnInit {
   detail!: Characters
   homeworld!: Planets
   films: Movies[] = []
+  species: Species[] = []
 
   constructor (
     private route: ActivatedRoute,
@@ -51,6 +52,16 @@ export class CharactersDetailComponent implements OnInit {
           this.films.push(response)
         })
       }) 
+
+      this.detail.species.forEach((specie: string) => {
+        const specieId = StringUtils.extractIdFromUrl(specie)
+        console.log(specieId)
+        this.speciesService.getSpecie(specieId).subscribe((response: Species) => {
+          console.log(response)
+          this.species.push(response)
+
+        })
+      })
     });
   }
 
