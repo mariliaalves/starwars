@@ -10,13 +10,17 @@
         <p>Hair Colors : {{detail.hair_colors}}</p>
         <p>Skin Colors : {{detail.skin_colors}}</p>
         <p>Language : {{detail.language}}</p>
-        <p>Homeworld :<a href="{{detail.homeworld}}">{{detail.homeworld}}</a></p>
-        <p>People :<a href="{{detail.people}}">{{detail.people}}</a></p>
-        <p>Films:
-          <span *ngFor="let film of detail.films; let last = last">
-            <a href="{{ film }}">{{ film }}</a>{{ last ? '' : ', ' }}
+        <p>Homeworld: <a [routerLink]="['/planets', extractIdFromUrl(detail.homeworld)]">{{ homeworld.name }}</a></p>
+        <p>People:
+          <span *ngFor="let person of people; let last = last">
+            <a [routerLink]="['/characters', extractIdFromUrl(person.url)]">{{ person.name }}</a>{{ last ? '' : ', ' }}
           </span>
         </p>
+        <p>Films:
+          <span *ngFor="let film of films; let last = last">
+            <a [routerLink]="['/movies', extractIdFromUrl(film.url)]">{{ film.title }}</a>{{ last ? '' : ', ' }}
+          </span>
+        </p>>
 
         
      

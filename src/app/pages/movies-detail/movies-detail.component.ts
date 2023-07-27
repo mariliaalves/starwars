@@ -18,7 +18,7 @@ import { Planets } from 'src/app/model/planets.model';
 })
 export class MoviesDetailComponent implements OnInit {
   detail!: Movies
-  species: Species[] = []
+  species: Species[] = [] 
   characters: Characters[] = []
   planets: Planets[] = []
 

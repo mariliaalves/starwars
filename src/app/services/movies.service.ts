@@ -16,9 +16,6 @@ export class MoviesService implements IMoviesService {
 
   constructor(
     private http: HttpClient,
-   
-    
-    
     ) { }
 
   public getMovies() : Observable<GenericApiResult<Movies[]>> {
