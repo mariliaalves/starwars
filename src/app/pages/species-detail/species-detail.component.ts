@@ -52,8 +52,8 @@ export class SpeciesDetailComponent implements OnInit {
           console.log(response);
           this.people.push(response);
         });
-
-      });this.detail.films.forEach((film: string) => {
+      });
+      this.detail.films.forEach((film: string) => {
         const filmId = StringUtils.extractIdFromUrl(film);
         console.log(filmId);
         this.filmsService.getMovie(filmId).subscribe((response: Movies) => {

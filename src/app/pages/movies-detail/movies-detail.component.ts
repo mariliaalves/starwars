@@ -36,40 +36,40 @@ export class MoviesDetailComponent implements OnInit {
   
    getMovie(): void {
      const id = this.route.snapshot.paramMap.get('id') ?? ''
-     
      this.moviesService.getMovie(id).subscribe((response: Movies) => {
       this.detail = response;
-      console.log(this.detail)
+      console.log(this.detail);
+
+      this.detail.species.forEach((specie: string) => {
+        const specieId = StringUtils.extractIdFromUrl(specie)
+        console.log(specieId)
+        this.speciesService.getSpecie(specieId).subscribe((response: Species) => {
+          console.log(response)
+          this.species.push(response)
+        })
+       })
+
+       this.detail.characters.forEach((characters: string) => {
+        const charactersId = StringUtils.extractIdFromUrl(characters)
+        console.log(charactersId)
+        this.charactersService.getCharacter(charactersId).subscribe((response: Characters) => {
+          console.log(response)
+          this.characters.push(response)
+        })
+       })
+       this.detail.planets.forEach((planet: string) => {
+        const planetId = StringUtils.extractIdFromUrl(planet)
+        console.log(planetId)
+        this.planetsService.getPlanet(planetId).subscribe((response: Planets) => {
+          this.planets.push(response)
+        })
+       })
      })
-     this.detail.species.forEach((specie: string) => {
-      const specieId = StringUtils.extractIdFromUrl(specie)
-      console.log(specieId)
-      this.speciesService.getSpecie(specieId).subscribe((response: Species) => {
-        console.log(response)
-        this.species.push(response)
-      })
-     })
-     this.detail.characters.forEach((characters: string) => {
-      const charactersId = StringUtils.extractIdFromUrl(characters)
-      console.log(charactersId)
-      this.charactersService.getCharacter(charactersId).subscribe((response: Characters) => {
-        console.log(response)
-        this.characters.push(response)
-      })
-     })
-     this.detail.planets.forEach((planet: string) => {
-      const planetId = StringUtils.extractIdFromUrl(planet)
-      console.log(planetId)
-      this.planetsService.getPlanet(planetId).subscribe((response: Planets) => {
-        console.log(response)
-        this.planets.push(response)
-      })
-     })
-     
-  
   }
   extractIdFromUrl(url : string) : string {
     return StringUtils.extractIdFromUrl(url)
   }
 }
     
+ 
+     
