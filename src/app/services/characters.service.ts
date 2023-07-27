@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, forkJoin } from 'rxjs';
+import { Observable} from 'rxjs';
 import GenericApiResult from '../model/genericApiResults';
 import { Characters } from '../model/characters.model';
 import { MoviesService } from './movies.service';
 import { PlanetsService } from './planets.service';
 import { SpeciesService } from './species.service';
-import {map,switchMap} from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'

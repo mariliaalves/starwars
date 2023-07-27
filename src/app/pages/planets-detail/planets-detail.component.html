@@ -9,14 +9,16 @@
    <p>Climate : {{detail.climate}}</p>
    <p>Terrain : {{detail.terrain}}</p>
    <p>Surface Water: {{detail.surface_water}}</p>
-   <p>Residents :<a href="{{detail.residents}}">{{detail.residents}}</a></p>
-   <p>Films:
-    <span *ngFor="let film of detail.films; let last = last">
-      <a href="{{ film }}">{{ film }}</a>{{ last ? '' : ', ' }}
+   <p>Residents:
+    <span *ngFor="let resident of residents; let last = last">
+      <a [routerLink]="['/characters', extractIdFromUrl(resident.url)]">{{ resident.name }}</a>{{ last ? '' : ', ' }}
     </span>
   </p>
-
-
+  <p>Films:
+    <span *ngFor="let film of films; let last = last">
+      <a [routerLink]="['/movies', extractIdFromUrl(film.url)]">{{ film.title }}</a>{{ last ? '' : ', ' }}
+    </span>
+  </p>
   </div>
 </div>
       

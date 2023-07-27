@@ -7,9 +7,24 @@
 
       <p>Species:
         <span *ngFor="let specie of species; let last = last">
-            <a [routerLink]="['/species', extractIdFromUrl(specie.url)]">{{ specie.name }}</a>{{ last ? '' : ', ' }}
+          <a routerLink="/species/{{ extractIdFromUrl(specie.url) }}">{{ specie.name }}</a>{{ last ? '' : ', ' }}
         </span>
-    </p>
+      </p>
+      
+      
+      <p>Characters:
+        <span *ngFor="let character of characters; let last = last">
+          <a routerLink="/characters/{{ extractIdFromUrl(character.url) }}">{{ character.name }}</a>{{ last ? '' : ', ' }}
+        </span>
+      </p>
+    
+      <p>Planets:
+        <span *ngFor="let planet of planets; let last = last">
+          <a routerLink="/planets/{{ extractIdFromUrl(planet.url) }}">{{ planet.name }}</a>{{ last ? '' : ', ' }}
+        </span>
+      </p> 
+
+     
   
     
     </div>

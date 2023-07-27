@@ -10,6 +10,7 @@ import { Species } from 'src/app/model/species.model';
 import { Characters } from 'src/app/model/characters.model';
 import { Planets } from 'src/app/model/planets.model';
 
+
 @Component({
   selector: 'app-movies-detail',
   templateUrl: './movies-detail.component.html',
@@ -40,10 +41,10 @@ export class MoviesDetailComponent implements OnInit {
       this.detail = response;
       console.log(this.detail)
      })
-     this.detail.species.forEach((species: string) => {
-      const speciesId = StringUtils.extractIdFromUrl(species)
-      console.log(speciesId)
-      this.speciesService.getSpecie(speciesId).subscribe((response: Species) => {
+     this.detail.species.forEach((specie: string) => {
+      const specieId = StringUtils.extractIdFromUrl(specie)
+      console.log(specieId)
+      this.speciesService.getSpecie(specieId).subscribe((response: Species) => {
         console.log(response)
         this.species.push(response)
       })
@@ -56,10 +57,10 @@ export class MoviesDetailComponent implements OnInit {
         this.characters.push(response)
       })
      })
-     this.detail.planets.forEach((planets: string) => {
-      const planetsId = StringUtils.extractIdFromUrl(planets)
-      console.log(planetsId)
-      this.planetsService.getPlanet(planetsId).subscribe((response: Planets) => {
+     this.detail.planets.forEach((planet: string) => {
+      const planetId = StringUtils.extractIdFromUrl(planet)
+      console.log(planetId)
+      this.planetsService.getPlanet(planetId).subscribe((response: Planets) => {
         console.log(response)
         this.planets.push(response)
       })

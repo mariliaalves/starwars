@@ -16,7 +16,7 @@
         
        <p>Films:
             <span *ngFor="let film of films; let last = last">
-              <a routerLink="/characters/{{ extractIdFromUrl(film.url) }}">{{ film.title }}</a>{{ last ? '' : ', ' }}
+              <a routerLink="/movies/{{ extractIdFromUrl(film.url) }}">{{ film.title }}</a>{{ last ? '' : ', ' }}
             </span>
           </p>
 
@@ -25,7 +25,8 @@
               <a routerLink="/species/{{ extractIdFromUrl(specie.url) }}">{{ specie.name }}</a>{{ last ? '' : ', ' }}
             </span>
           </p>
-        
+    </div>
+</div>     
     
  
     
