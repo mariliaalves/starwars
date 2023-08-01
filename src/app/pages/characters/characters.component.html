@@ -1,19 +1,12 @@
 <div class="white-block">
-    
-
-<table>
     <h1>CHARACTERS</h1>
-    <th>
-        
-    </th>
-    <div>
+<table>
+    <ul>
         <a class="title" *ngFor="let item of character ; let id = 'index+1 ';" routerLink="/characters/{{ getCharacterId(item.url) }}">
         <li>
             {{item.name}}
-
         </li>
-
         </a>
-    </div>
+    </ul>
 </table>
 </div>

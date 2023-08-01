@@ -1,16 +1,12 @@
 <div class="white-block">
+    <h1>Movies</h1>
 <table>
-    <th>
-        <h1>Movies</h1>
-    </th>
-    <div>
+    <ul>
         <a class="title" *ngFor="let item of movie ; let id = 'index+1 ';" routerLink="/movies/{{ getMovieId(item.url) }}">
         <li>
             {{item.title}}
-
         </li>
-
         </a>
-    </div>
+    </ul>
 </table>
 </div>

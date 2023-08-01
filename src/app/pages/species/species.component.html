@@ -1,16 +1,12 @@
 <div class="white-block">
+    <h1>Species</h1>
 <table>
-    <th>
-        <h1>Species</h1>
-    </th>
-    <div>
+    <ul>
         <a class="title" *ngFor="let item of specie ; let id = 'index+1 ';" routerLink="/species/{{ getSpecieId(item.url) }}">
         <li>
             {{item.name}}
-
         </li>
-
         </a>
-    </div>
+    </ul>
 </table>
 </div>
